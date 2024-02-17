@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
+import { ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { GithubUsersServiceService } from '../github-users-service/github-users-service.service';
 import { Subscription } from 'rxjs';
 import {MatCardModule} from '@angular/material/card';
@@ -9,7 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 @Component({
   selector: 'app-user-profile',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, RouterLink],
   templateUrl: './user-profile.component.html',
   styleUrl: './user-profile.component.scss'
 })
@@ -54,6 +54,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
       location: res?.location ?? '',
       email: res?.email ?? '',
       bio: res?.bio ?? '',
+      repos_url: res?.repos_url ?? '',
       public_repos: res?.public_repos ?? '',
       followers: res?.followers ?? '',
       following: res?.following ?? '',
@@ -70,6 +71,7 @@ export interface gitHubUser {
   location: string | null,
   email: string | null,
   bio: string | null,
+  repos_url: string | null,
   public_repos: number | null,
   followers: number | null,
   following: number | null,

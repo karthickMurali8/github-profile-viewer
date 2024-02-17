@@ -14,4 +14,8 @@ export class GithubUsersServiceService {
   getUser(userName: string): Observable<{}> {
     return this.http.get( `https://api.github.com/users/${userName}`);
   }
+
+  getRepos(url: string): Observable<any> {
+    return this.http.get(url);
+  }
 }

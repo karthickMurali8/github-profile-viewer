@@ -1,4 +1,4 @@
-<div class="profile-wrapper">
+<div class="profile-wrapper center-container">
     <mat-card>
         <mat-card-header>
             <img mat-card-avatar [src]="user.avatar_url"/>
@@ -27,7 +27,7 @@
             </div>
         </mat-card-content>
         <mat-card-footer>
-            <button mat-raised-button color="primary">View Repositories</button>
+            <button mat-raised-button color="primary" [routerLink]="['repositories']">View Repositories</button>
         </mat-card-footer>
     </mat-card>
 </div>
