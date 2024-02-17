@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+@use '@angular/material' as mat;
+@include mat.core();
+
+$theme-primary: mat.define-palette(mat.$indigo-palette);
+$theme-accent: mat.define-palette(mat.$pink-palette);
+$theme-warn: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $theme-primary,
+    accent: $theme-accent,
+    warn: $theme-warn,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+@include mat.all-component-themes($theme);
+
+//Global styles
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h2, h3 {
+    margin-bottom: 3px !important;
+}
+
+.mb-3 {
+    margin-bottom: 9px;
+}

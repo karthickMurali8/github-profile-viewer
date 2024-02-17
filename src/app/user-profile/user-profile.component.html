@@ -1,1 +1,33 @@
-<p>user-profile works!</p>
+<div class="profile-wrapper">
+    <mat-card>
+        <mat-card-header>
+            <img mat-card-avatar [src]="user.avatar_url"/>
+            <h2>{{ user.name || 'N/A' }}</h2>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="mb-3">
+                <h4>Bio :</h4>
+                <span>{{ user.bio || 'N/A' }}</span>
+            </div>
+            <div class="mb-3">
+                <h4>Company :</h4>
+                <span>{{ user.company || 'N/A' }}</span>
+            </div>
+            <div class="mb-3">
+                <h4>Email :</h4>
+                <span>{{ user.email || 'N/A' }}</span>
+            </div>
+            <div class="mb-3">
+                <h4>Location :</h4>
+                <span>{{ user.location || 'N/A' }}</span>
+            </div>
+            <div class="mb-3">
+                <h4>Number Of Public Repositories :</h4>
+                <span>{{ user.public_repos || 'N/A' }}</span>
+            </div>
+        </mat-card-content>
+        <mat-card-footer>
+            <button mat-raised-button color="primary">View Repositories</button>
+        </mat-card-footer>
+    </mat-card>
+</div>
